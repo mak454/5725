@@ -8,49 +8,21 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>Lab 4</title>
+<title>Code</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body id="top">
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row2">
-  <nav id="mainav" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <ul class="clear">
-      <li><a href="../index.html">Home</a></li>
-      <li class="active"><a class="drop" href="#">Pages</a>
-        <ul>
-          <li class="active"><a href="Labs.html">Labs</a></li>
-          <li><a href="Milestones.html">Milestones</a></li>
-          <li><a href="Team.html">Team</a></li>
-          <li><a href="Documents.html">Documents</a></li>
-        </ul>
-      </li>
-      <li><a href="Gallery.html">Gallery</a></li>
-      <li><a href="RobotDesign.html">Robot Design</a></li>
-      <li><a href="SoftwareDesign.html">Software Design</a></li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </nav>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="bgded overlay" style="background-image:url('./images/demo/backgrounds/logo.PNG');">
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <h6 class="heading">Robots 'N' Roses</h6>
+    <h6 class="heading">Report</h6>
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
   </div>
@@ -62,8 +34,8 @@ Licence URI: http://www.os-templates.com/template-terms
   <footer id="footer" class="hoc clear"> 
     <div class="content"> 
       <!-- ################################################################################################ -->
-      <h1><b>Goal</b></h1>
-      <p>The purpose of this Lab was to setup and integrate an FPGA, Camera, Arduino system capable of detecting a square, rhombus or triangle shape as well as identifying it’s color and reporting it through the arduino. This required a number of different components. We had to setup the camera through I2C protocols, setup FPGA to Arduino communication, write FPGA software to read in and output camera data to a screen as well as perform image analysis through the FPGA and report it the arduino.</p>
+      <h1><b>Objective</b></h1>
+      <p>We aim to uniquely identify each bee, log its entries and exits from the hive, and determine whether or not it has pollen on it during each entry or exit. Our system of tagging and tracking bees as they leave and enter the hive requires very little human intervention after set-up. It also detects pollen and has been designed such that another user can easily adjust threshold values at will. </p>
       </div>
     <!-- ################################################################################################ -->
   </footer>
@@ -72,37 +44,23 @@ Licence URI: http://www.os-templates.com/template-terms
   <footer id="footer" class="hoc clear"> 
     <div class="content">
       <h1><b>Materials</b></h1>
-      <p>          1 FPGA</p>
-      <p>          1 Arduino Uno</p>
-      <p>          1 OV7670 Camera</p>
+      <p>          2 pairs of infrared break-beam sensors ($1.95 each)</p>
+      <p>          2 Pi Camera V2s ($29.95 each)</p>
+      <p>          2 LED light rings ($16.99 each)</p>
+      <p>          2 Raspberry Pi B+s ($34.99 each)</p>
+      <p>          2 PiTFT screens ($34.95 each)</p>
+      <p>          Clear Acrylic ($2.50 per square foot)</p>
+      <p>          Plywood ($3.00 per square foot)</p>
+      <p>          Sharpie ($1.08)</p>
+      <p>          Wires, Wood Glue, Elmer's Glue, Absurdly Tiny Screws and Nuts (price given amount used is negligible)</p>
       </div>
     <!-- ################################################################################################ -->
   </footer>
 <div class="wrapper row4">
   <footer id="footer" class="hoc clear"> 
     <div class="content">
-      <h1><b>Camera SetUp</b></h1>
-      <p>We connected the camera to our Arduino I2C input. We ran a script to determine the I2C address of the camera, which was found to be 0x21. Then, we used this data sheet to figure out which registers to set on our camera. Here is a list of registers we had to modify and their functions:</p>
-      <pre>
-          COM7: 
-            Reset all registers 
-            Choose camera resolution
-            Choose data output format (e.g. RGB)
-            Enable color bar test 
-          COM3:
-            Enable scaling (to change resolution)
-            CLKRC
-            Use external clock as internal clock
-          COM15:
-            Choose RGB format (e.g. 565, 555, 444)
-          RGB444:
-            Enable RGB444 output format
-          COM17:
-            Enable color bar test 
-          COM9:
-            Set AGC to 2x and freeze (reduces noise)</pre>
-        <p>Because our onboard memory is less than 300KB and each pixel is stored as 1 byte, we figured that the camera resolution should be set to QCIF (176x144 pixels per frame). Our VGA accepts RGB 332, so we chose RGB as our output format. After trying different combinations of RGB output formats and downsampling, our implementation with RGB444 outputs managed to produce a sharp image that can distinguish red and blue from other colors.</p>
-        <img class="imgl borderedbox inspace-5" src="../images/demo/cameracode.PNG" alt="">
+      <h1><b>Design and Implementation</b></h1>
+      <p>The final design for this project evolved through several prototypes, as expected, and ended looking quite different than originally planned. The original design had a single tunnel that held both cameras along with a little hole for the bees to walk across the scale. Two big critiques for this design were a) any tunnel big enough to hold the camera would be big enough to fit multiple bees and b) the scale would not be a very accurate way of measuring honey bees’ weight because they weigh so little and the change in readings due to them walking would heavily affect the measurements. We ended up with a tunnel within a box; the exterior box held the cameras and break beam sensors while the internal tunnel was clear so the bees could be easily photographed (see Figure 1). We decided to make the bigger box out of wood since it is lighter than acrylic. </p>
         </div>
     <!-- ################################################################################################ -->
   </footer>
