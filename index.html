@@ -95,76 +95,19 @@ http://www.templatemo.com/preview/templatemo_392_avocado
 							</div>
                             
 							<div class="grid_18 alpha mid_container" id="testimonials">
-										<div class="prefix_1 grid_16 alpha">
-												<h1>Testimonials</h1>
-												<div class="grid_7 alpha">
-														<div class="grid_3 alpha"><img alt="Testimonial 1" src="images/gallery/testimonial_01.jpg" /> </div>
-														<div class="grid_4 omega">
-																<p>Curabitur mi magna, dignissim ac tellus eu, consectetur iaculis elit.<br />
-																<strong>Julia</strong> - Designer<br /><br /></p>
-														</div>
-												</div>
-												<div class="grid_8 prefix_1 omega">
-														<div class="grid_3 alpha"><img alt="Testimonial 4" src="images/gallery/testimonial_04.jpg" /></div>
-														<div class="grid_5 omega">
-																<p>Aenean eleifend, dolor blandit placerat iaculis, nisi massa feugiat nibh, sit amet mattis felis.<br />
-																<strong>Mike</strong> - Artist<br /><br /></p>
-														</div>
-												</div>
-                                                
-												<div class="clear"></div>
-                                                
-												<div class="grid_7 alpha">
-														<div class="grid_3 alpha"><img alt="Testimonial 2" src="images/gallery/testimonial_02.jpg" /></div>
-														<div class="grid_4 omega">
-																<p>Pellentesque a imperdiet leo, vitae semper neque. Cras dictum aliquam sem eu vehicula.<br />
-																<strong>David</strong> - Designer</p>
-														</div>
-												</div>
-												<div class="grid_8 prefix_1 omega">
-														<div class="grid_3 alpha"><img alt="Testimonial 3" src="images/gallery/testimonial_03.jpg" /></div>
-														<div class="grid_5 omega">
-																<p>Morbi sed congue elit, vel porta lacus. Curabitur at nunc semper, cursus velit a, gravida diam.<br />
-																<strong>John</strong> - Manager</p>
-														</div>
-												</div>
-										</div>
+									<div class="prefix_1 grid_16 alpha">
+										<h1>Design</h1>
+										<p>The final design for this project evolved through several prototypes, as expected, and ended looking quite different than originally planned. The original design had a single tunnel that held both cameras along with a little hole for the bees to walk across the scale. Two big critiques for this design were a) any tunnel big enough to hold the camera would be big enough to fit multiple bees and b) the scale would not be a very accurate way of measuring honey bees’ weight because they weigh so little and the change in readings due to them walking would heavily affect the measurements. We ended up with a tunnel within a box; the exterior box held the cameras and break beam sensors while the internal tunnel was clear so the bees could be easily photographed. We decided to make the bigger box out of wood since it is lighter than acrylic.</p>
+									</div>
 							</div>
 							<div class="grid_18 alpha mid_container" id="contact">
-										<div class="prefix_1 grid_7 alpha">
-												<h1>Address</h1>
-												<p>
-														24/36 Cras dictum aliquam,<br />
-														Nam rhoncus, interdum 10110<br />
-														Email: <a href="mailto:info@company.com">info@company.com</a><br /><br />
-												<p>
-												<h1>Location</h1>
-												<div id="map-canvas" class="grid_7 omega alpha"></div>
-										</div>
-										<div class="prefix_1 grid_8 omega">
-												<h1>Contact Form</h1>
-												<form action="#">
-														<p>Name </p>
-														<div class="clear"></div>
-														<input name="fullname" type="text" id="fullname" maxlength="30" />
-														<div class="clear"></div>
-														<p>Email</p>
-														<div class="clear"></div>
-														<input name="email" type="text" id="email" maxlength="30" />
-														<div class="clear"></div>
-														<p>Subject</p>
-														<div class="clear"></div>
-														<input name="subject" type="text" id="subject" maxlength="30" />
-														<div class="clear"></div>
-														<p>Message</p>
-														<div class="clear"></div>
-														<textarea name="message" id="message"></textarea>
-														<div class="clear"></div>
-														<input type="submit" value="Send" class="grid_3 alpha" />
-												</form>
-										</div>
+								<div class="prefix_1 grid_7 alpha">
+									<h1>Hardware</h1>
+									<p>The hardware design here is actually fairly straightforward. The bigger box holding the cameras and IR break-beam sensors was laser cut from 3mm plywood and measures roughly 50mm wide by 60mm tall by 70mm long from the exterior. The interior walls were colored black with sharpie to make image processing easier (note a very simple color detection computer vision life hack: anything irrelevant that can be made black should be made black). The interior clear tunnel was cut from 1.5mm clear acrylic and was 14mm by 14mm tall and wide and 75 mm long. Both the box and the tunnel were fixed to each other using wood glue. A significant challenge here was to get the break-beam sensors to detect each other, but also be sensitive enough to detect a bee blocking the tunnel. Given that these sensors were in such close proximity to each other we originally thought this was nearly impossible. However, through intentional vertical misalignment (vertically the emitter and the detector are roughly a centimeter off from each other), we were able to get it so that any considerable blockage of the tunnel would result in a “break.” Another subtle but crucial detail added in order to get the IR beam detectors working was the addition of a small popsicle stick wall (also colored black, so difficult to see) perpendicular to the main wall to prevent the sensors from detecting each other.</p>	
+									<p>Additionally, both the box and the tunnel’s dimensions were minimized to make this as light as possible so in the future we would be able to place it on a scale without overloading it if necessary. The tunnel’s width and height were chosen such that a normal sized bee could just barely fit through to prevent multiple bees from entering in parallel and climbing all over each other, thus screwing up the software.</p>
+									<p>On the circuitry side, this was tough. In the conclusion we will touch on improvements and the most necessary, immediate improvement needed is in wiring and circuit design. Because we had two Pis, two PiTFT screens, and multiple items needing power, ground, plus a GPIO connection to both Pis, the only choice we had given the amount of time we had was to use two breadboards and a lot of extraordinarily lengthy wires. Another challenge was keeping the wires out of the pictures, which required some interesting mechanical gymnastics involving duct tape. This is clearly a less than ideal situation, and in the future it will be remedied.</p>
+								</div>
 							</div>
-					</div>
                     
 					<div class="grid_6 omega">
 						<div class="grid_6 alpha omega"><a class="anchor_animate" href="#about">Introduction</a></div>
